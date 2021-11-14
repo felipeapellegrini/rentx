@@ -10,6 +10,21 @@ export class UsersRepository implements IUsersRepository {
   constructor() {
     this.repository = getRepository(User);
   }
+  async findById(user_id: string): Promise<User> {
+    const user = await this.repository.findOne(user_id);
+
+    return user;
+  }
+  async findByLicense(driver_license: string): Promise<User> {
+    const user = await this.repository.findOne({ driver_license });
+
+    return user;
+  }
+  async findByEmail(email: string): Promise<User> {
+    const user = await this.repository.findOne({ email });
+
+    return user;
+  }
 
   async create({
     name,
