@@ -1,10 +1,10 @@
 import { Category } from '../../models/Category';
 import {
-  ICategoryRepository,
+  ICategoriesRepository,
   ICreateCategoryDTO,
-} from '../ICategoryRepository';
+} from '../I-categories-repository';
 
-export class CategoriesRepositoryInMemory implements ICategoryRepository {
+export class CategoriesRepositoryStub implements ICategoriesRepository {
   private categories: Category[] = [];
   async create({ name, description }: ICreateCategoryDTO): Promise<Category> {
     const fakeCategory = new Category();

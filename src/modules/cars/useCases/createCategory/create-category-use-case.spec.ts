@@ -1,12 +1,12 @@
-import { AppError } from '../../../../errors/AppError';
-import { CategoriesRepositoryInMemory } from '../../repositories/in-memory/CategoriesRepositoryInMemory';
-import { CreateCategoryUseCase } from './CreateCategoryUseCase';
+import { AppError } from '../../../../errors/app-error';
+import { CategoriesRepositoryStub } from '../../repositories/in-memory/categories-repository-stub';
+import { CreateCategoryUseCase } from './create-category-use-case';
 
 let createCategoryUseCase: CreateCategoryUseCase;
-let categoriesRepositoryStub: CategoriesRepositoryInMemory;
+let categoriesRepositoryStub: CategoriesRepositoryStub;
 describe('CreateCategory', () => {
   beforeEach(() => {
-    categoriesRepositoryStub = new CategoriesRepositoryInMemory();
+    categoriesRepositoryStub = new CategoriesRepositoryStub();
     createCategoryUseCase = new CreateCategoryUseCase(categoriesRepositoryStub);
   });
   it('Should return a new category on success', async () => {
