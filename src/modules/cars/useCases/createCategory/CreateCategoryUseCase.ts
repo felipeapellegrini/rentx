@@ -2,7 +2,7 @@ import { injectable, inject } from 'tsyringe';
 
 import { AppError } from '../../../../errors/AppError';
 import { Category } from '../../models/Category';
-import { CategoriesRepository } from '../../repositories/implementations/CategoriesRepository';
+import { ICategoryRepository } from '../../repositories/ICategoryRepository';
 
 interface IRequest {
   name: string;
@@ -13,7 +13,7 @@ interface IRequest {
 export class CreateCategoryUseCase {
   constructor(
     @inject('CategoriesRepository')
-    private categoriesRepository: CategoriesRepository,
+    private categoriesRepository: ICategoryRepository,
   ) {}
   async execute({ name, description }: IRequest): Promise<Category> {
     const categoryAlreadyExists = await this.categoriesRepository.findByName(
