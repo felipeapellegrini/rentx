@@ -1,4 +1,4 @@
-import { AppError } from '../../../../errors/app-error';
+import { AppError } from '../../../../shared/errors/app-error';
 import { CategoriesRepositoryStub } from '../../repositories/in-memory/categories-repository-stub';
 import { CreateCategoryUseCase } from './create-category-use-case';
 

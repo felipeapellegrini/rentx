@@ -1,4 +1,4 @@
-import { AppError } from '../../../../errors/app-error';
+import { AppError } from '../../../../shared/errors/app-error';
 import { SpecificationsRepositoryStub } from '../../repositories/in-memory/specifications-repository-stub';
 import { CreateSpecificationUseCase } from './create-specification-use-case';
 

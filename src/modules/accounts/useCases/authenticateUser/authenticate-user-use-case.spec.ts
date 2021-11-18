@@ -1,4 +1,4 @@
-import { AppError } from '../../../../errors/app-error';
+import { AppError } from '../../../../shared/errors/app-error';
 import { ICreateUserDTO } from '../../dtos/I-create-user-dto';
 import { UsersRepositoryStub } from '../../repositories/in-memory/users-repository-stub';
 import { CreateUserUseCase } from '../createUser/create-user-use-case';
