@@ -5,7 +5,7 @@ import {
 } from '../I-categories-repository';
 
 export class CategoriesRepositoryStub implements ICategoriesRepository {
-  private categories: Category[] = [];
+  categories: Category[] = [];
   async create({ name, description }: ICreateCategoryDTO): Promise<Category> {
     const fakeCategory = new Category();
 
